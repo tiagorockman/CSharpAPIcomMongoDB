@@ -1,4 +1,7 @@
-﻿using MongoDB.Driver.GeoJsonObjectModel;
+﻿using MongoDB.Bson;
+using MongoDB.Bson.Serialization.Attributes;
+using MongoDB.Bson.Serialization.IdGenerators;
+using MongoDB.Driver.GeoJsonObjectModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,6 +11,10 @@ namespace APIcomMongoDB.Data.Collection
 {
     public class Infectado
     {
+        [BsonId]
+        [BsonRepresentation(BsonType.ObjectId)]
+        public ObjectId Id { get; set; }
+
         public Infectado(DateTime dataNascimento, string sexo, double latitude, double longitude)
         {
             this.DataNascimento = dataNascimento;

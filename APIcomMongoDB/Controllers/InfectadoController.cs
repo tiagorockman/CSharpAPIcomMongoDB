@@ -51,7 +51,7 @@ namespace APIcomMongoDB.Controllers
             }
 
 
-            [HttpDelete("{}data")]
+            [HttpDelete("{dataNascimento}")]
             public ActionResult Delete(DateTime dataNascimento)
             {
                 // atualizaçao por data de nascimento, o ideal seria que fosse por id
